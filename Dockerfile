@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Run migrations and start the bot
-CMD ["sh", "-c", "alembic upgrade head && python -m src.main"] 
+CMD ["sh", "-c", "env && alembic upgrade head && python -m src.main"] 
