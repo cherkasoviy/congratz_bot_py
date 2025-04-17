@@ -14,9 +14,12 @@ A Telegram bot for sending birthday congratulations and managing user birthdays.
 ## Requirements
 
 - Python 3.8+
-- python-telegram-bot
-- SQLAlchemy
-- python-dotenv
+- aiogram 3.3.0
+- python-dotenv 1.0.1
+- SQLAlchemy 2.0.27
+- Alembic 1.13.1
+- Pydantic 2.6.1
+- psycopg2-binary 2.9.9
 
 ## Installation
 

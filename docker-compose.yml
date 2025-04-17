@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://congratz:congratz@db:5432/congratz
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    volumes:
+      - ./src:/app/src
+      - ./alembic:/app/alembic
+
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=congratz
+      - POSTGRES_PASSWORD=congratz
+      - POSTGRES_DB=congratz
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data: 
